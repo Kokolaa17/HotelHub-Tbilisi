@@ -1,0 +1,49 @@
+<!-- Top Commerical Section -->
+
+<section class="commerical-section">
+    <article>
+        <h1>HotelHub Tbilisi</h1>
+        <div class="text-content">
+            <p>Your gateway to the finest hotels in Tbilisi. Discover comfort, luxury, and unforgettable experiences with us.</p>
+            <button>Discover Hotels</button>
+        </div>
+    </article>
+</section>
+<!-- Commerical End -->
+
+<!-- Favorite Rooms Section -->
+<div class="rooms-section">
+    <h2>Guest Favorite Rooms</h2>
+    <div class="guest-favorites">
+        <!-- Slider With SwiperJS -->
+        <swiper-container slides-per-view="3" speed="500" loop="true" css-mode="true" autoplay="true" autoplay-delay="2000" autoplay-pause-on-mouse-enter="true"> 
+            @for (room of GuestFavouriteRooms; track $index) {
+                <swiper-slide>
+                <div class="room-card">
+                    <div class="image-container">
+                        <img [src]="room.images[0].source" alt="Room 1">
+                    </div>
+                    <div class="room-info">
+                        <h3>{{room.name}}</h3>
+                        <div class="different-bg">
+                            <p><i class="fa-solid fa-person"></i> Guests: {{room.maximumGuests}}</p>
+                        </div>
+                    </div>
+                    <button>Book Now</button>
+                </div>
+            </swiper-slide>
+            }
+        </swiper-container>
+        <!-- Slider End -->
+    </div>
+</div>
+<!-- Favorite Rooms End -->
+
+<!-- Benefits Section -->
+ <section class="benefits">
+    <h2>Key Benefits</h2>
+    <div class="benefits-content">
+        
+    </div>
+ </section>
+
