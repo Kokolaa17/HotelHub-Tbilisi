@@ -8,7 +8,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     left: 0px;
     height: 80px;
     header {
@@ -41,4 +41,45 @@
             }
         }
     }
+}
+
+.side-menu {
+    position: fixed;
+    right: 0;
+    background-color: #fff;
+    height: 100%;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    transform: translate(500px);
+    transition: .3s;
+    z-index: 900;
+    ul {
+        margin-top: 110px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        list-style: none;
+        width: 90%;
+        text-align: center;
+        li {
+            font-size: 17px;
+            cursor: pointer;
+            font-family: Roboto Flex, sans-serif;
+            letter-spacing: 1px;
+            font-weight: 300;
+            border-bottom: 1px solid #e8e8e8;
+            width: 100%;
+            border-radius: 50%;
+            padding-bottom: 5px;
+            transition: 0.3s;
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+}
+
+.activeLink {
+     border-bottom: 2px solid #75C5CF !important;
 }

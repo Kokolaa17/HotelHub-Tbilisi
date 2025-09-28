@@ -4,6 +4,21 @@
     </header>
 
     <ul>
-        <li><i class="fa-solid fa-bars-staggered"></i></li>
+        <li [style.border-bottom]="isSideMenuOpen ? '1px solid #ff0000' : '1px solid #75C5CF'" (click)="OpenSideMenu()">
+            @if (isSideMenuOpen) {
+               <i class="fa-solid fa-x" style="color: #ff0000;"></i>
+            }
+            @else {
+                <i class="fa-solid fa-bars-staggered" style="color: #75C5CF;"></i>
+            }
+        </li>
     </ul>
 </nav>
+
+<div class="side-menu" [style.transform]="isSideMenuOpen ? 'translateX(0px)' : 'translateX(500px)'">
+    <ul>
+        <li routerLinkActive="activeLink" routerLink="/">Home</li>
+        <li routerLink="/hotels">Hotels</li>
+        <li>Rooms</li>
+    </ul>
+</div>

@@ -3,3 +3,28 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+// Animations 
+@keyframes uspShaking {
+    0% {
+    transform: rotate(0);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    75% {
+        transform: rotate(8deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes Typing {
+    from {
+        width: 0ch;
+    }
+}

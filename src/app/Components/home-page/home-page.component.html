@@ -12,7 +12,7 @@
 <!-- Commerical End -->
 
 <!-- Favorite Rooms Section -->
-<div class="rooms-section">
+<div class="rooms-section section-split">
     <h2>Guest Favorite Rooms</h2>
     <div class="guest-favorites">
         <!-- Slider With SwiperJS -->
@@ -20,6 +20,8 @@
             @for (room of GuestFavouriteRooms; track $index) {
                 <swiper-slide>
                 <div class="room-card">
+                    <span class="price">€{{room.pricePerNight}} a night</span>
+                    <span [style.background-color]="room.available ?  'green' : 'red'" class="avaiable">{{room.available ? "Available" : "Not Available"}}</span>
                     <div class="image-container">
                         <img [src]="room.images[0].source" alt="Room 1">
                     </div>
@@ -40,10 +42,68 @@
 <!-- Favorite Rooms End -->
 
 <!-- Benefits Section -->
- <section class="benefits">
+<section class="benefits section-split">
     <h2>Key Benefits</h2>
-    <div class="benefits-content">
-        
+    <div class="usp-grid">
+        <div class="usp-card">
+            <div class="usp-card-icon">
+                <i class="fa-solid fa-martini-glass" aria-hidden="true"></i>
+            </div>
+            <h3>Beverages Included</h3>
+            <p> Enjoy a complimentary selection of beverages during your stay, from refreshing soft drinks to signature cocktails. </p>
+        </div>
+
+        <div class="usp-card">
+            <div class="usp-card-icon">
+                <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+            </div>
+            <h3>Stay First, Pay After</h3>
+            <p>Book with confidence and settle your payment only after your stay—hassle-free and convenient.</p>
+        </div>
+
+        <div class="usp-card">
+            <div class="usp-card-icon">
+                <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+            </div>
+            <h3>24-Hour Restaurant</h3>
+            <p>Dine any time of day or night at our 24-hour restaurant, offering international cuisine and local specialties.</p>
+        </div>
+
+        <div class="usp-card">
+            <div class="usp-card-icon">
+                <i class="fa-solid fa-spa" aria-hidden="true"></i>
+            </div>
+            <h3>Spa Included</h3>
+            <p>Relax and rejuvenate with complimentary access to our luxury spa facilities, designed for your wellbeing.</p>
+        </div>
+    </div>
+</section>
+<!-- Benefits End -->
+
+<!-- About Us Section -->
+ <section class="about-us section-split">
+    <h2>About Us</h2>
+    <div class="about-content">
+        <div class="left-side">
+            <h4>HotelHub Tbilisi 
+                <span>About us...</span>
+            </h4>
+
+            <article>
+                <p>At HotelHub Tbilisi, we are your gateway to the finest hotels in the heart of Georgia’s vibrant capital. With three exceptional hotels across Tbilisi and a dedicated team of over 1,500 employees, we are committed to delivering comfort, luxury, and unforgettable experiences to every guest.</p>
+                <p>From complimentary beverages, including refreshing soft drinks and signature cocktails, to our 24-hour restaurant serving both international cuisine and local specialties, we make sure your stay is filled with convenience and delight. Our luxury spa facilities are included for every guest, ensuring your relaxation and wellbeing are always a priority.</p>
+                <p>With our “Stay First, Pay After” policy, booking with us is completely hassle-free—enjoy your stay with peace of mind, knowing payment is settled only after your experience.</p>
+                <p>Discover comfort, elegance, and world-class hospitality at HotelHub Tbilisi—where unforgettable memories begin.</p>
+            </article>
+        </div>
+
+        <div class="image-container">
+            <img src="/images/headOffice.png" alt="head office picture">
+            <article>
+                <h5>Our Head Office</h5>
+                <p>Ilia Chavchavadze Avenue</p>
+            </article>
+        </div>
     </div>
  </section>
 
