@@ -198,12 +198,13 @@
 
 .benefits {
     margin: 80px auto;
-    .usp-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(180px, 1fr));
+    .usp-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         gap: 2rem;
         max-width: 1100px;
-        margin: 70px auto 0;
+        margin: 0 auto;
         text-align: center;
         .usp-card-icon {
             width: 80px;
@@ -246,7 +247,7 @@
     .about-content {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap-reverse;
+        align-items: center;
         .left-side {
             width: 50%;
             border-left: 2px solid #5E5E5E;
@@ -297,9 +298,10 @@
         .image-container {
             position: relative;
             img {
-                width: 400px;
+                max-width: 400px;
                 height: 616px;
                 border-radius: 18px;
+                object-fit: cover;
                 cursor: pointer;
                 transition: 0.3s;
                 &:hover {
@@ -329,6 +331,74 @@
                 p {
                     font-size: 15px;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1440px){
+    .section-split {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 1130px){
+    .about-content {
+        flex-direction: column-reverse;
+        .left-side {
+            margin-top: 15px;
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: none !important;
+            padding-left: unset !important;
+            h4 {
+                text-align: center;
+                span {
+                    display: none;
+                }
+                &::before{
+                    height: 0 !important;
+                    width: 0 !important;
+                }
+            }
+            article {
+                max-width: unset !important;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1080px){
+    .usp-section {
+        flex-wrap: wrap;
+        .usp-card {
+            max-width: 310px;
+        }
+    }
+}
+
+@media screen and (max-width: 650px){
+    .commerical-section {
+        article {
+            padding-inline: 20px;
+            h1 {
+                font-size: 40px !important;
+            }
+            p {
+                font-size: 17px !important;
+                line-height: 30px;
+            }
+        }
+    }
+
+    .about-content {
+        .image-container {
+            img { 
+                max-width: 300px !important;
             }
         }
     }

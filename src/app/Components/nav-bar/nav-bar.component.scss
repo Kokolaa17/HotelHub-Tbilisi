@@ -83,3 +83,12 @@
 .activeLink {
      border-bottom: 2px solid #75C5CF !important;
 }
+
+@media screen and (max-width: 500px){
+    .main-nav {
+        padding-inline: 10px !important;
+    }
+    .side-menu {
+        width: 100% !important;
+    }
+}

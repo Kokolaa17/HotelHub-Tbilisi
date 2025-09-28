@@ -16,7 +16,18 @@
     <h2>Guest Favorite Rooms</h2>
     <div class="guest-favorites">
         <!-- Slider With SwiperJS -->
-        <swiper-container slides-per-view="3" speed="500" loop="true" css-mode="true" autoplay="true" autoplay-delay="2000" autoplay-pause-on-mouse-enter="true"> 
+        <swiper-container slides-per-view="1" speed="500" loop="true" css-mode="true"
+         autoplay="true" autoplay-delay="2000"
+            autoplay-pause-on-mouse-enter="true"
+             breakpoints='{
+                    "850": {
+                    "slidesPerView": 2
+                    },
+                    "1300": {
+                    "slidesPerView": 3
+                    }
+                }'
+            > 
             @for (room of GuestFavouriteRooms; track $index) {
                 <swiper-slide>
                 <div class="room-card">
@@ -44,7 +55,7 @@
 <!-- Benefits Section -->
 <section class="benefits section-split">
     <h2>Key Benefits</h2>
-    <div class="usp-grid">
+    <div class="usp-section">
         <div class="usp-card">
             <div class="usp-card-icon">
                 <i class="fa-solid fa-martini-glass" aria-hidden="true"></i>
