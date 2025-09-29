@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
-import { APIServiceService } from '../../apiservice.service';
+import { APIServiceService } from '../../Services/apiservice.service';
 import { Room } from '../../Interfaces/room';
 
 @Component({
