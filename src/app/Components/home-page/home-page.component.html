@@ -5,7 +5,7 @@
         <h1>HotelHub Tbilisi</h1>
         <div class="text-content">
             <p>Your gateway to the finest hotels in Tbilisi. Discover comfort, luxury, and unforgettable experiences with us.</p>
-            <button>Discover Hotels</button>
+            <button routerLink="/hotels">Discover Hotels</button>
         </div>
     </article>
 </section>
@@ -45,6 +45,11 @@
                     <button>Book Now</button>
                 </div>
             </swiper-slide>
+            }
+            @empty {
+                <div style="display: flex; align-items: center; justify-content: center; height: 200px; width: 100%;" class="loader-area">
+                     <span class="loader"></span>
+                </div>
             }
         </swiper-container>
         <!-- Slider End -->

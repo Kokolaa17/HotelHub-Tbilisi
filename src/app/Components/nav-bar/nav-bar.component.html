@@ -1,6 +1,9 @@
 <nav class="main-nav">
     <header>
-        <img src="/images/hotelhubtbilisi.png" alt="HotelHubTbilisi Logo">
+        <img src="/images/hotelhubtbilisi.png" alt="HotelHubTbilisi Logo" routerLink="/">
+           @if (loading) {
+            <span class="loader"></span>
+        }
     </header>
 
     <ul>
@@ -17,8 +20,8 @@
 
 <div class="side-menu" [style.transform]="isSideMenuOpen ? 'translateX(0px)' : 'translateX(500px)'">
     <ul>
-        <li routerLinkActive="activeLink" routerLink="/">Home</li>
-        <li routerLink="/hotels">Hotels</li>
+        <li [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="activeLink"  routerLink="/">Home</li>
+        <li routerLinkActive="activeLink" routerLink="/hotels">Hotels</li>
         <li>Rooms</li>
     </ul>
 </div>

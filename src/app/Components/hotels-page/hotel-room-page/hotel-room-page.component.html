@@ -1,0 +1,34 @@
+<section class="hotel-banner">
+    <img class="hotel-image" [src]="hotel.featuredImage" [alt]="hotel.name + ' image'">
+    <h3>{{hotel.name}}</h3>
+    <div class="hotel-logo">
+        <img [src]="hotelImages[hotelId] || 'assets/images/default.jpg'" 
+        [alt]="hotel.name + ' logo'">
+    </div>
+</section>
+
+<section class="hotels-section section-split">
+    <h2>Rooms</h2>
+
+    <div class="rooms">
+        @for (room of hotel.rooms; track $index) {
+            <div class="room-card">
+                <span class="price">€{{room.pricePerNight}} a night</span>
+                <span [style.background-color]="room.available ?  'green' : 'red'" class="avaiable">{{room.available ? "Available" : "Not Available"}}</span>
+                <div class="image-container">
+                    <img [src]="room.images[0].source" alt="Room 1">
+                </div>
+                <div class="room-info">
+                    <h3>{{room.name}}</h3>
+                    <div class="different-bg">
+                        <p><i class="fa-solid fa-person"></i> Guests: {{room.maximumGuests}}</p>
+                    </div>
+                </div>
+                <button>Book Now</button>
+            </div>
+        }
+        @empty {
+            <span class="loader"></span>
+        }
+    </div>
+</section>

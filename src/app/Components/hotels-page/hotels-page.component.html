@@ -1,0 +1,20 @@
+<section class="hotels-section section-split">
+    <h2>Our Hotel Picks</h2>
+    <div class="hotels">
+        @for (hotel of hotels; track $index) {
+            <div class="hotel-card" [routerLink]="['/hotel-room', hotel.id]">
+                <div class="image-container">
+                    <img [src]="hotel.featuredImage" [alt]="hotel.name + ' Image'">
+                </div>
+                <article class="hotel-info">
+                    <h3>{{hotel.name}}</h3>
+                     <p>Rating : <i class="fa-solid fa-star" style="color: #FFD43B;"></i> <i class="fa-solid fa-star" style="color: #FFD43B;"></i> <i class="fa-solid fa-star" style="color: #FFD43B;"></i> <i class="fa-solid fa-star" style="color: #FFD43B;"></i> <i class="fa-solid fa-star" style="color: #FFD43B;"></i><span></span></p>
+                    <p>Location : <span>{{hotel.city}}</span></p>
+                </article>
+            </div>
+        }
+        @empty {
+            <span class="loader"></span>
+        }
+    </div>
+</section>

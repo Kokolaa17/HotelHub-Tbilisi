@@ -1,10 +1,12 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { APIServiceService } from '../../Services/apiservice.service';
 import { Room } from '../../Interfaces/room';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -23,9 +25,7 @@ export class HomePageComponent implements OnInit {
 
   GetGuestFavouriteRooms() : void  {
     this.http.GetFavouriteRooms().subscribe((data : Room[])=> {
-      this.GuestFavouriteRooms = data.slice(0,6);
-      console.log(this.GuestFavouriteRooms);
-    })  
+      this.GuestFavouriteRooms = data.slice(0,6)})  
   }
 
 }

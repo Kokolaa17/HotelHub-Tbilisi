@@ -1,0 +1,174 @@
+.section-split { 
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 13px;
+        left: 0;
+        background-color: #5E5E5E;
+        border-radius: 100%;
+    }
+        h2 {
+        font-family: Poppins, sans-serif;
+        font-size: 24px;
+        color: #5E5E5E;
+        background-color: #fff;
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        margin: 0 auto 80px;
+        padding: 0px 15px;
+    }
+}
+
+.hotels-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    min-height: 100vh;
+    .hotels {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+        overflow: hidden;
+        .hotel-card {
+            background: #f8f8f8;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px #0000001a;
+            width: 95%;
+            transition: 0.3s;
+            border-top: 4px solid #75C5CF; 
+            box-shadow: 0 -2px 10px rgba(93, 173, 226, 0.3);
+            animation: fromTop 1s;
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 0px 30px #0000001a;
+                img {
+                    scale: 1.1;
+                }
+            }
+            cursor: pointer;
+            .image-container {
+                width: 100%;
+                height: 350px;
+                overflow: hidden;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                display: block;
+                transition: 0.3s;
+            }
+            .hotel-info {
+                padding: 16px;
+                background: #fff;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                h3 {
+                    font-weight: 700;
+                    font-size: 23px;
+                    font-family: 'Poppins', sans-serif;
+                }
+                p {
+                    font-size: 18px;
+                    font-family: Roboto Flex, sans-serif;
+                    display: flex;
+                    align-items: center;
+                    color: #808090;
+                    font-weight: 200;
+                    span {
+                        font-weight: 700;
+                        color: #75C5CF;
+                        font-size: 20px;
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loader {
+    animation: rotate 1s infinite;
+    height: 50px;
+    width: 50px;
+  }
+
+  .loader:before,
+  .loader:after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+  .loader:before {
+    animation: ball1 1s infinite;
+    background-color: #75C5CF;
+    box-shadow: 30px 0 0 #75C5CF;
+    margin-bottom: 10px;
+  }
+  .loader:after {
+    animation: ball2 1s infinite;
+    background-color: #75C5CF;
+    box-shadow: 30px 0 0 #75C5CF;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg) scale(0.8) }
+    50% { transform: rotate(360deg) scale(1.2) }
+    100% { transform: rotate(720deg) scale(0.8) }
+  }
+
+  @keyframes ball1 {
+    0% {
+      box-shadow: 30px 0 0 #75C5CF;
+    }
+    50% {
+      box-shadow: 0 0 0 #75C5CF;
+      margin-bottom: 0;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #75C5CF;
+      margin-bottom: 10px;
+    }
+  }
+
+  @keyframes ball2 {
+    0% {
+      box-shadow: 30px 0 0 #75C5CF;
+    }
+    50% {
+      box-shadow: 0 0 0 #75C5CF;
+      margin-top: -20px;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #75C5CF;
+      margin-top: 0;
+    }
+  }
+  
+    
+
+@media screen and (max-width: 1440px){
+    .section-split {
+        max-width: 90%;
+    }
+}
