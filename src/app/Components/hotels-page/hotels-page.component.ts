@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { APIServiceService } from '../../Services/api.service';
 import { Hotel } from '../../Interfaces/hotel';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 
 @Component({
@@ -11,9 +11,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './hotels-page.component.scss'
 })
 export class HotelsPageComponent implements OnInit {
-  constructor(private http : APIServiceService){
-    
-  }
+  
+  private readonly _routeR : ActivatedRoute = inject(ActivatedRoute)
 
   public hotels : Hotel[] = [];
 
@@ -22,9 +21,7 @@ export class HotelsPageComponent implements OnInit {
   }
 
   GetAllHotels() : void {
-    this.http.GetAllHotels().subscribe((res : Hotel[]) => {
-      this.hotels = res;
-    })
+    this.hotels = this._routeR.snapshot.data['hotels'];
   }
 
 }

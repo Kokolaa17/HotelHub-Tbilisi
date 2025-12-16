@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { ApiConnectionLoaderService } from '../../Services/api-connection-loader.service';
 
@@ -10,23 +10,21 @@ import { ApiConnectionLoaderService } from '../../Services/api-connection-loader
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private loader : ApiConnectionLoaderService){
+  private readonly _loader : ApiConnectionLoaderService = inject(ApiConnectionLoaderService);
 
-  }
-
-  ngOnInit(): void {
+  ngOnInit() {
     this.GetLoadingState()
   }
 
   isSideMenuOpen : boolean = false;
-  public loading: boolean = false;
+  loading: boolean = false;
 
-  OpenSideMenu() : void {
+  OpenSideMenu() {
     this.isSideMenuOpen = !this.isSideMenuOpen
   }
 
-  GetLoadingState() : void {
-   this.loader.loaderLogic.subscribe((state : boolean) => {
+  GetLoadingState() {
+   this._loader.loaderLogic.subscribe((state : boolean) => {
     this.loading = state
    })
   }

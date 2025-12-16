@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, OnInit } from '@angular/core';
 import { APIServiceService } from '../../Services/api.service';
 import { Room } from '../../Interfaces/room';
 import { RouterModule } from '@angular/router';
@@ -13,18 +13,16 @@ import { RouterModule } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  public GuestFavouriteRooms : Room[] = [];
+  private readonly _http : APIServiceService = inject(APIServiceService)
 
-  constructor(private http : APIServiceService) {
+  GuestFavouriteRooms : Room[] = [];
 
-  }
-
-  ngOnInit(): void {
+  ngOnInit() {
     this.GetGuestFavouriteRooms();
   }
 
-  GetGuestFavouriteRooms() : void  {
-    this.http.GetFavouriteRooms().subscribe((data : Room[])=> {
+  GetGuestFavouriteRooms() {
+    this._http.GetFavouriteRooms().subscribe((data : Room[])=> {
       this.GuestFavouriteRooms = data.slice(0,6)})  
   }
 
