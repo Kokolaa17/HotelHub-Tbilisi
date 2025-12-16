@@ -30,7 +30,7 @@
             > 
             @for (room of GuestFavouriteRooms; track $index) {
                 <swiper-slide>
-                <div class="room-card">
+                <div class="room-card" [routerLink]="['/room-details', room.id]">
                     <span class="price">€{{room.pricePerNight}} a night</span>
                     <span [style.background-color]="room.available ?  'green' : 'red'" class="avaiable">{{room.available ? "Available" : "Not Available"}}</span>
                     <div class="image-container">

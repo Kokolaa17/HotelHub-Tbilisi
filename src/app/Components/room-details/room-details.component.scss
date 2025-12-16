@@ -1,0 +1,258 @@
+.room-details {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    .images-reservation {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        .room-gallery {
+            width: 60%;
+            swiper-container {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                height: 500px;
+                --swiper-navigation-color: #75C5CF;
+                --swiper-navigation-size: 50px;
+                --swiper-pagination-color: #75C5CF;
+                .swiper-slide {
+                    text-align: center;
+                    font-size: 18px;
+                    background: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;   
+                    }
+                }
+            }
+        }
+        .room-reservation {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: #75C5CF 0 3px;
+            border: 1px solid #ddd;
+            width: 370px !important;
+            h2 {
+                margin: 0 0 10px;
+                width: 100%;
+                text-align: center;
+                font-family: open-sans, sans-serif;
+                font-weight: 400;
+                &::before{
+                    content: "";
+                    display: inline-block;
+                    width: 10%;
+                    height: 2.5px;
+                    background: #75C5CF;
+                    margin: 0 15px;
+                    vertical-align: middle;
+                    border-top-left-radius: 100%;
+                }
+                &::after{
+                    content: "";
+                    display: inline-block;
+                    width: 10%;
+                    height: 2.5px;
+                    background: #75C5CF;
+                    margin: 0 15px;
+                    vertical-align: middle;
+                    border-top-right-radius: 100%;
+                }
+            }
+            p {
+                font-size: 16px;
+                text-align: center;
+                font-family: open-sans, sans-serif;
+                font-weight: 300;
+                .amount {
+                    color: #009688;
+                    font-weight: 700;
+                }
+            }
+            form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    .input-container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+                        label {
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            i {
+                                font-style: normal;
+                                display: inline-block;
+                                color: #aaa;
+                                border-radius: 50%;
+                                font-size: 11px;
+                                cursor: pointer;
+                                padding-top: 3px;
+                            }
+                        }
+                        input {
+                            padding: 8px;
+                            height: 38px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;   
+                        }
+                    }
+                    button {
+                        position: absolute;
+                        bottom: -5px;
+                        width: 100%;
+                        padding: 10px;
+                        border-radius: 4px;
+                        font-weight: 700;
+                        cursor: pointer;
+                        background-image: linear-gradient(#ffffff80, #f0f0f000);
+                        border: 2px solid rgba(53, 146, 158, .199);
+                        background: linear-gradient(to bottom, #6ad4e3, #45b3c7);
+                        color: #fff;
+                        letter-spacing: 1px;
+                    }
+                }
+        }
+    }
+}
+
+.other-rooms {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+     &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 13px;
+        left: 0;
+        background-color: #5E5E5E;
+        border-radius: 100%;
+    }
+    .guest-favorites {
+        min-height: 200px;
+        swiper-container {
+            swiper-slide {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                .room-card {
+                    height: 300px;
+                    width: 360px;
+                    border-radius: 15px;
+                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+                    position: relative;
+                    overflow: hidden;
+                    .price {
+                        position: absolute;
+                        background-color: #75C5CF;
+                        padding: 5px 20px;
+                        right: 0;
+                        bottom: 30%;
+                        z-index: 3;
+                        color: #fff;
+                        border-top-left-radius: 15px;
+                    }
+                    .avaiable {
+                        position: absolute;
+                        transform: rotate(-39deg);
+                        padding: 5px 20px;
+                        left: -25px;
+                        top: 10px;
+                        z-index: 3;
+                        color: #fff;
+                    }
+                    .image-container {
+                        width: 100%;
+                        height: 70%;
+                        border-top-left-radius: 15px;
+                        border-top-right-radius: 15px;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transition: transform 0.3s ease;
+                            cursor: pointer;
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                    .room-info {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-inline: 10px;
+                        height: 15%;
+                        h3 {
+                            font-family: 'Poppins', sans-serif;
+                            font-size: 18px;
+                            color: #333;
+                        }
+                        .different-bg {
+                            background-color: #ECECEC;
+                            color: #000;
+                            padding: 5px 10px;
+                            border-radius: 8px;
+                            font-family: 'Poppins', sans-serif;
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                    }
+                    button {
+                        width: 100%;
+                        height: 15%;
+                        display: block;
+                        padding: 8px 0;
+                        background-color: #75C5CF;
+                        border: none;
+                        color: #fff;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 14px;
+                        font-weight: 600;
+                        border-bottom-left-radius: 15px;
+                        border-bottom-right-radius: 15px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                        &:hover {
+                            background-color: #5aa8b1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    h2 {
+        font-family: Poppins, sans-serif;
+        font-size: 24px;
+        color: #5E5E5E;
+        background-color: #fff;
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        margin: 0 auto 80px;
+        padding: 0px 15px;
+    }
+}

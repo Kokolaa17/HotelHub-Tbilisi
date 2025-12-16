@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { APIServiceService } from '../../Services/apiservice.service';
+import { APIServiceService } from '../../Services/api.service';
 import { Hotel } from '../../Interfaces/hotel';
 import { RouterModule } from '@angular/router';
 
@@ -22,7 +22,7 @@ export class HotelsPageComponent implements OnInit {
   }
 
   GetAllHotels() : void {
-    this.http.GetALlHotels().subscribe((res : Hotel[]) => {
+    this.http.GetAllHotels().subscribe((res : Hotel[]) => {
       this.hotels = res;
     })
   }

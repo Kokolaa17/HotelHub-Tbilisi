@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Hotel } from '../../../Interfaces/hotel';
 import { Room } from '../../../Interfaces/room';
-import { APIServiceService } from '../../../Services/apiservice.service';
+import { APIServiceService } from '../../../Services/api.service';
 
 @Component({
   selector: 'app-hotel-room-page',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './hotel-room-page.component.html',
   styleUrl: './hotel-room-page.component.scss'
 })

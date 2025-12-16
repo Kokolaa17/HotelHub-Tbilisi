@@ -1,0 +1,93 @@
+<section class="room-details">
+    <div class="images-reservation">
+        <div class="room-gallery">
+            <swiper-container slides-per-view="1" loop="true" css-mode="true"
+            navigation="true" pagination="true" pagination-clickable="true"
+            keyboard="true" rewind="true" autoplay="true" autoplay-delay="3000"
+            autoplay-pause-on-mouse-enter="true"
+            > 
+            @for (image of roomDetails.images; track $index) {
+                <swiper-slide>
+                    <img [src]="image.source" alt="Room Image {{ $index + 1 }}">
+                </swiper-slide>
+            }
+            @empty {
+                <div style="display: flex; align-items: center; justify-content: center; height: 200px; width: 100%;" class="loader-area">
+                    <span class="loader"></span>
+                </div>
+            }
+        </swiper-container>
+        </div>
+        <div class="room-reservation">
+            <h2>Reservation</h2>
+            <p>{{roomDetails.name}} <span style="color: #75C5CF; font-weight: 700;">€ {{roomDetails.pricePerNight}}</span> <span style="color: #888;"> a night</span></p>
+            <form action="">
+
+                <div class="input-container">
+                    <label for="">Check-in <i class="fa-solid fa-circle-exclamation"></i></label>
+                    <input type="date">
+                </div>
+                <div class="input-container">
+                    <label for="">Check-out <i class="fa-solid fa-circle-exclamation"></i></label>
+                    <input type="date">
+                </div>
+                <div class="input-container">
+                    <label for="">Customer Name <i class="fa-solid fa-circle-exclamation"></i></label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div class="input-container">
+                    <label for="">Customer Tel: <i class="fa-solid fa-circle-exclamation"></i></label>
+                    <input type="tel" placeholder="+995">
+                </div>
+
+                <button>BOOK NOW</button>
+            </form>
+        </div>
+    </div>
+    <div class="room-details">
+
+    </div>
+    <div class="other-rooms">
+        <h2>Other rooms</h2>
+        <div class="guest-favorites">
+        <!-- Slider With SwiperJS -->
+        <swiper-container slides-per-view="1" speed="500" loop="true" css-mode="true"
+         autoplay="true" autoplay-delay="2000"
+            autoplay-pause-on-mouse-enter="true"
+             breakpoints='{
+                    "850": {
+                    "slidesPerView": 2
+                    },
+                    "1300": {
+                    "slidesPerView": 3
+                    }
+                }'
+            > 
+            @for (room of otherRooms; track $index) {
+                <swiper-slide>
+                <div class="room-card" [routerLink]="['/room-details', room.id]">
+                    <span class="price">€{{room.pricePerNight}} a night</span>
+                    <span [style.background-color]="room.available ?  'green' : 'red'" class="avaiable">{{room.available ? "Available" : "Not Available"}}</span>
+                    <div class="image-container">
+                        <img [src]="room.images[0].source" alt="Room 1">
+                    </div>
+                    <div class="room-info">
+                        <h3>{{room.name}}</h3>
+                        <div class="different-bg">
+                            <p><i class="fa-solid fa-person"></i> Guests: {{room.maximumGuests}}</p>
+                        </div>
+                    </div>
+                    <button>Book Now</button>
+                </div>
+            </swiper-slide>
+            }
+            @empty {
+                <div style="display: flex; align-items: center; justify-content: center; height: 200px; width: 100%;" class="loader-area">
+                     <span class="loader"></span>
+                </div>
+            }
+        </swiper-container>
+        <!-- Slider End -->
+    </div>
+    </div>
+</section>

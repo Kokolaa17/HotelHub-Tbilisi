@@ -14,11 +14,15 @@ export class APIServiceService {
     return this.http.get('https://hotelbooking.stepprojects.ge/api/Rooms/GetAll');
   }
 
-  GetALlHotels() : any {
+  GetAllHotels() : any {
     return this.http.get('https://hotelbooking.stepprojects.ge/api/Hotels/GetAll');
   }
 
   GetHotelRooms(hotelId: number) : any {
     return this.http.get(`https://hotelbooking.stepprojects.ge/api/Hotels/GetHotel/${hotelId}`);
+  }
+
+  getRoomDetails(roomId: number) : any {
+    return this.http.get(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${roomId}`);
   }
 }
