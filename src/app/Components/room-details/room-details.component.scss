@@ -43,7 +43,7 @@
             border-radius: 6px;
             box-shadow: #75C5CF 0 3px;
             border: 1px solid #ddd;
-            width: 370px !important;
+            min-width: 370px;
             h2 {
                 margin: 0 0 10px;
                 width: 100%;
@@ -86,6 +86,7 @@
                     flex-direction: column;
                     gap: 20px;
                     width: 100%;
+                    min-height: 360px;
                     height: 100%;
                     position: relative;
                     .input-container {
@@ -128,6 +129,88 @@
                         letter-spacing: 1px;
                     }
                 }
+        }
+    }
+    .room-info-section {
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        .left-info {
+            flex: 1;
+            h4 {
+                border-bottom: 2px solid rgba(204, 204, 204, .4352941176);
+                margin-bottom: 25px;
+                padding-bottom: 8px;
+                font-family: open-sans, sans-serif;
+                font-weight: 500;
+                font-size: 21px;
+            }
+            .detail {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                padding-block: 15px;
+                svg {
+                    height: 25px;
+                    width: 25px;
+                }
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    font-family: open-sans, sans-serif;
+                    font-weight: 400;
+                    span {
+                        color: #6a6a6a;
+                        font-weight: 300;
+                    }
+                }
+            }
+            h3 {
+                font-size: 21px;
+                font-weight: 500;
+                color: #000;
+                font-family: open-sans, sans-serif;
+                margin: 30px 0;
+                }
+                .offers {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 24px 24px;
+                    .offer-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        p {
+                            font-size: 18px;
+                            font-weight: 300;
+                            color: #000;
+                            font-family: open-sans, sans-serif;
+                            line-height: 24px;
+                            letter-spacing: .2px;
+                        }
+                    }
+                }
+        }
+        .right-info {
+            flex: 1;
+            h4 {
+                border-bottom: 2px solid rgba(204, 204, 204, .4352941176);
+                margin-bottom: 25px;
+                padding-bottom: 8px;
+                font-family: open-sans, sans-serif;
+                font-weight: 500;
+                font-size: 21px;
+            }
+            p {
+                font-family: open-sans, sans-serif;
+                padding-bottom: 3px;
+                line-height: 24px;
+                text-indent: 10px;
+                font-weight: 300;
+            }
         }
     }
 }
@@ -206,7 +289,7 @@
                         align-items: center;
                         padding-inline: 10px;
                         height: 15%;
-                        h3 {
+                        h6 {
                             font-family: 'Poppins', sans-serif;
                             font-size: 18px;
                             color: #333;
@@ -255,4 +338,20 @@
         margin: 0 auto 80px;
         padding: 0px 15px;
     }
+}
+
+@media screen and (max-width: 1010px) {
+   .images-reservation {
+    flex-direction: column;
+    align-items: center;
+    .room-gallery {
+        width: 100% !important;
+    }
+    .room-reservation {
+        width: 100% !important;
+    }
+   }
+   .room-info-section {
+    flex-direction: column;
+   }
 }
